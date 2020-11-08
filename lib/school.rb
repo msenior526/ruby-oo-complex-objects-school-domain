@@ -13,11 +13,17 @@ attr_accessor :name, :roster
     end
 
   def grade (grade)
+
     roster[grade]
   end
 
   def sort
-    @roster.sort.to_h
+    new_roster = {}
+    @roster.each do |key, value|
+      new_roster[key] = value.sort
+
+    end
+    new_roster
   end
 
   end
